@@ -25,6 +25,7 @@ export class SignupComponent implements OnInit {
     this.service.parent.email = null
     this.service.parent.familybooknumber = null
     this.service.parent.password = null
+    
   }
   submit() {
     if (this.service.parent.id != null &&this.service.parent.name != null&&this.service.parent.email != null && this.service.parent.familybooknumber != null && this.service.parent.password != null) {
