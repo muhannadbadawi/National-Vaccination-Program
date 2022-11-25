@@ -1,0 +1,120 @@
+<div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+        <div class="col-12">
+            <!-- Navbar -->
+            <nav
+                class="navbar navbar-expand-lg blur border-radius-xl top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+                <div class="container-fluid ps-2 pe-0" style="text-align: center;">
+                    <img src="../assets/img/Jordanian Ministry Of Health.png" alt="" width="40px">
+                    <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="">
+                        Jordanian Ministry Of Health
+                    </a>
+
+                    <div class="collapse navbar-collapse" id="navigation">
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+        </div>
+    </div>
+</div>
+
+<main class="main-content  mt-0">
+    <section>
+        <div class="page-header min-vh-100">
+            <div class="container">
+                <div class="row">
+                    <div
+                        class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column ">
+                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner" style="border-radius:8px">
+                                <div class="carousel-item active" data-bs-interval="4000">
+                                    <img src="../../assets/img/Vaccine childern images/Immunization_schedule_720x480.jpg"
+                                        class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="4000" style="border-radius:8px">
+                                    <img src="../../assets/img/Vaccine childern images/pediatric_vaccine_600.jpg"
+                                        class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="4000" style="border-radius:8px">
+                                    <img src="../../assets/img/Vaccine childern images/shutterstock_1756653812_h2.jpg"
+                                        class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item" style="border-radius:8px">
+                                    <img src="../../assets/img/Vaccine childern images/4928.jpg" class="d-block w-100"
+                                        alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
+                        <div class="card card-plain">
+                            <div class="card-header">
+                            
+                            </div>
+                            <div class="card-body">
+                                <form (submit)="submit()">
+                                    <h4 class="font-weight-bolder mt-3">Regester</h4>
+                                    <p class="mb-1">Fill all fields to register</p>
+                                    <p class="mb-1">
+                                        <mat-form-field appearance="outline" style="width:350px ;">
+                                            <mat-label>National ID</mat-label>
+                                            <input matInput placeholder="National ID" [(ngModel)]="service.parent.id"
+                                                name="id">
+                                        </mat-form-field>
+                                    </p>
+                                    <p class="mb-1">
+                                        <mat-form-field appearance="outline" style="width:350px ;">
+                                            <mat-label>Name</mat-label>
+                                            <input matInput placeholder="Name" [(ngModel)]="service.parent.name"
+                                                name="name">
+                                        </mat-form-field>
+                                    </p>
+                                    <p class="mb-1">
+                                        <mat-form-field appearance="outline" style="width:350px ;">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput placeholder="Email" [(ngModel)]="service.parent.email"
+                                                name="email">
+                                        </mat-form-field>
+                                    </p>
+                                    <p class="mb-1">
+                                        <mat-form-field appearance="outline" style="width:350px ;">
+                                            <mat-label>Family Book Number</mat-label>
+                                            <input matInput placeholder="Family Book Number"
+                                                [(ngModel)]="service.parent.familybooknumber" name="familybooknumber">
+                                        </mat-form-field>
+                                    </p>
+                                    <p class="mb-2">
+                                        <mat-form-field appearance="outline" style="width:350px ;">
+                                            <mat-label>Password</mat-label>
+                                            <input type="password" matInput placeholder="Password"
+                                                [(ngModel)]="service.parent.password" name="password">
+                                        </mat-form-field>
+                                    </p>
+
+                                    <button type="submit" class="btn btn-primary" >Save parent</button>
+                                        <p class="mb-2 text-sm mx-auto">
+                                            Already have an account?
+                                            <a routerLink="../signin"  class="text-primary text-gradient font-weight-bold">Sign in</a>
+                                        </p>
+                                   
+                                </form>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
