@@ -46,11 +46,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { SignupComponent } from './signup/signup.component';
-import { SigninComponent } from './signin/signin.component';
-
-
+import { AppRoutingModule, routes } from './app-routing.module';
+import { SignupComponent } from './app-account/signup/signup.component';
+import { SigninComponent } from './app-account/signin/signin.component';
+import { Router, RouterModule } from '@angular/router';
+import { DashboardComponent } from './app-dashboard/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,

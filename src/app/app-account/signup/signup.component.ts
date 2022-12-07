@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-import { ParentService } from '../parent.service'
+import { ParentService } from '../../parent.service'
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -8,8 +8,8 @@ import { ParentService } from '../parent.service'
 })
 export class SignupComponent implements OnInit {
   constructor(
-    public service: ParentService
-    ) { }
+    public service: ParentService,
+  ) { }
   ngOnInit(): void {
     this.service.parent = {
       id: null,
@@ -25,17 +25,17 @@ export class SignupComponent implements OnInit {
     this.service.parent.email = null
     this.service.parent.familybooknumber = null
     this.service.parent.password = null
-    
+
   }
   submit() {
-    if (this.service.parent.id != null &&this.service.parent.name != null&&this.service.parent.email != null && this.service.parent.familybooknumber != null && this.service.parent.password != null) {
+    if (this.service.parent.id != null && this.service.parent.name != null && this.service.parent.email != null && this.service.parent.familybooknumber != null && this.service.parent.password != null) {
       this.service.parent.id = Number.parseInt(this.service.parent.id.toString())
       this.service.postParent().subscribe(res => {
         Swal.fire(
           'Created ',
           'Done',
           'success'
-          )
+        )
         this.RefresherFormBook();
       },
         err => {
@@ -43,16 +43,16 @@ export class SignupComponent implements OnInit {
             'ERROR !',
             'Not Found',
             'error'
-            )
+          )
           console.log(err)
         })
     }
-    else{
+    else {
       Swal.fire(
         'ERROR !',
         'Make Sure You Fill All Field!',
         'error'
-        )
+      )
     }
   }
 

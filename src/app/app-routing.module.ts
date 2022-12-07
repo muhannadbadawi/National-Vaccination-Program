@@ -1,21 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
+import { DashboardComponent } from './app-dashboard/dashboard/dashboard.component';
+import { SigninComponent } from './app-account/signin/signin.component';
+import { SignupComponent } from './app-account/signup/signup.component';
 
-const routes: Routes = [
-{
-  path:'signup',
-  component:SignupComponent
-},
-{
-  path:'',
-  component:SigninComponent
-},
-{
-  path:'signin',
-  component:SigninComponent
-}
+
+export const routes: Routes = [
+  { path: 'signup',component: SignupComponent },
+  { path: 'dashboard', loadChildren: () => import('./app-dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: '', component: SigninComponent, pathMatch: 'full'  },
+  { path: 'signin', component: SigninComponent,redirectTo:'',  pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -23,3 +17,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
