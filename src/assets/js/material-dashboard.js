@@ -1,4 +1,8 @@
 "use strict";
+
+const { Cookies } = require("typescript-cookie");
+const { setCookie } = require("typescript-cookie/dist/src/api");
+
 (function() {
   var isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 

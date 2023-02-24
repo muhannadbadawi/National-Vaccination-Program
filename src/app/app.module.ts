@@ -49,16 +49,17 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule, routes } from './app-routing.module';
 import { SignupComponent } from './app-account/signup/signup.component';
 import { SigninComponent } from './app-account/signin/signin.component';
-import { Router, RouterModule } from '@angular/router';
-import { DashboardComponent } from './app-dashboard/dashboard/dashboard.component';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {MenuItem} from 'primeng/api';                  //api
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     SigninComponent
   ],
-  imports: [
+  imports: [  
     BrowserModule,
+    AccordionModule,
     AppRoutingModule,
     CommonModule,
     HttpClientModule,

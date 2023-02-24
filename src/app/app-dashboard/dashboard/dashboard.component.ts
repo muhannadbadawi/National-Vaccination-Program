@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ParentService } from 'src/app/parent.service';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/app-services/shared.service';
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,65 +10,39 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { 
+  
+  constructor(public service:SharedService,private router: Router) {
+    this.loadData();
+    if(localStorage.getItem("ID")=="null"){
+      this.router.navigateByUrl('../');
+     }
   }
+  parent=false;
+  admin=false;
+  health=false;
+  
   city: any;
-  ngOnInit(): void {
-    this.city = {
-      zarqa: ["مركز صحي الازرق الشامل", "مركز صحي بيرين الشامل", "مركز صحي المشيرفة الشامل", "مركز صحي وادي الحجر الشامل", "مركز صحي اسكان الهاشمية الشامل", "مركز صحي الضليل الشامل", "مركز صحي الرشيد الشامل", "مركز حي العامرية الشامل", "مركز صحي حمزه الشامل"],
-      amman: ["مركز صحي عمان الشامل", "مركز صحي الاميرة بسمة الشامل", "مركز صحي وادي السير الشامل", "مركز صحي ابو نصير الشامل", "مركز صحي ناعور الشامل", "مركز صحي الموقر الشامل", "مركز صحي ماركا الشامل", "مركز صحي النصر الشامل", "مركز صحي خريبة السوق الشامل", "مركز صحي الجيزة الشامل", "مركز صحي طبربور الشامل", "مركز صحي الجبيهة الشامل", "مركز صحي الهاشمي الشامل", "مركز صحي القويسمة الشامل", "مركز صحي صويلح الشامل"],
-      irbid: ["مركز صحي الرمثا الشامل", "مركز صحي الحصن الشامل", "مركز صحي الصريح الشامل", "مركز صحي حكمة الشامل", "مركز صحي الفاروق الشامل", "مركز صحي قميم الشامل", "مركز صحي دير ابي سعيد الشامل", "مركز صحي كفر عوان الشامل", "مركز صحي الطيبة الشامل", "مركز صحي النعيمة الشامل", "مركز صحي المغير الشامل"],
-      ajloan: ["مركز صحي الامير حسن الشامل", "مركز صحي عنجرة الشامل", "مركز صحي صخره الشامل"],
-      Jerash: ["مركز صحي جرش الشامل", "مركز صحي برما الشامل", "مركز صحي المصطبة الشامل", "مركز صحي الرازي الشامل"],
-      balqa: ["مركز صحي البقيع الشامل", "مركز صحي عين الباشا الشامل", "مركز صحي الفحيص الشامل", "مركز صحي زي الشامل", "مركز صحي الصبيحي الشامل", "مركز صحي عيرا الشامل", "مركز صحي يرقا الشامل"],
-      Mafraq: ["مركز صحي رحاب الشامل", "مركز صحي نادرة الشامل", "مركز صحي بلعما الشامل", "مركز صحي منشية بني حسن الشامل", "مركز صحي حدود الكرامة الشامل", "مركز صحي الرويشد الشامل", "مركز حي الزعتري الشامل", "مركز صحي الخالدية الشامل", "مركز صحي سما السرحان الشامل", "مركز صحي الحمراء الشامل", "مركز صحي مغير السرحان الشامل", "مركز صحي الباعج الشامل", "مركز صحي المنصورة الشامل", "مركز صحي الصفاوي الشامل", "مركز صحي دير الكهف الشامل", "مركز صحي ام القطين الشامل", "مركز صحي صبحا الشامل", "مركز صحي ام الجمال الشامل", "مركز صحي الاشرفية الشامل", "مركز صحي الرفاعيات الشامل", "مركز صحي البشرية الشامل"],
-      Madaba: ["مركز صحي الشرقي الشامل", "مركز صحي لب الشامل"],
-      maan: ["مركز صحي الشوبك الشامل", "مركز صحي الحسينية الشامل", "مركز صحي الجفر الشامل", "مركز حي المريغة الشامل", "مركز صحي البتراء الشامل"],
-      aqaba: ["مركز صحي القويرة الشامل", "مركز صحي الديسة الشامل", "مركز صحي رم الشامل", "مركز صحي رحمة الشامل", "مركز صحي الريشة الشامل", "مركز صحي بئر مذكور الشامل", "مركز صحي القريقرة الشامل"],
-      Tafilah: ["مركز صحي بصيرة الشامل"],
-      karak: ["مركز صحي الكرك الشامل", "مركز صحي القطرانة الشامل", "مركز صحي المزار الشامل", "مركز صحي فقوع الشامل", "مركز صحي عي الشامل", "مركز حي غور المزرعة الشامل", "مركز صحي الربة الشامل"]
-    }
+ 
+  ngOnInit(): void {    
+   this.service.SetFBN()
+    if(localStorage.getItem("ID")=="null"){
+      this.router.navigateByUrl('../signup');
+     }
+  
   }
-
-  myfun() {
-    switch (this.city) {
-      case "zarqa":
-        console.log(this.city.zarqa);
-        break;
-      case "amman":
-        console.log(this.city.amman);
-        break;
-      case "irbid":
-        console.log(this.city.irbid);
-        break;
-      case "ajloan":
-        console.log(this.city.ajloan);
-        break;
-      case "Jerash":
-        console.log(this.city.Jerash);
-        break;
-      case "Mafraq":
-        console.log(this.city.Mafraq);
-        break;
-      case "Tafilah":
-        console.log(this.city.Tafilah);
-        break;
-      case "balqa":
-        console.log(this.city.balqa);
-        break;
-      case "Madaba":
-        console.log(this.city.Madaba);
-        break;
-      case "karak":
-        console.log(this.city.karak);
-        break;
-      case "aqaba":
-        console.log(this.city.aqaba);
-        break;
-      case "maan":
-        console.log(this.city.maan);
-        break;
-    }
-
+  title='material-demo';
+  notifications=0;
+  showSpinner=false;
+  loadData(){
+    if(localStorage.getItem("type")=="3"){this.parent=true}
+    if(localStorage.getItem("type")=="1"){this.admin=true}
+    if(localStorage.getItem("type")=="2"){this.health=true}
+    // removeCookie("type")
+    this.showSpinner=true;
+    setTimeout(()=>{
+      this.showSpinner=false;
+    },1000)
   }
+  
+
 }

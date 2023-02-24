@@ -2,7 +2,19 @@
     <div class="row">
         <div class="col-12">
             <!-- Navbar -->
-
+            <nav
+            class="navbar  bg-dark border-radius-xl top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+            <div class="container-fluid  ps-2 pe-0 " style="text-align: center;">
+              
+              <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " style="color: white; " routerLink="./">
+                <img src="../assets/img/Jordanian Ministry Of Health.png" width="20px">
+                Jordanian Ministry Of Health
+              </a>
+  
+              <div class="collapse navbar-collapse" id="navigation">
+              </div>
+            </div>
+          </nav>
             <!-- End Navbar -->
         </div>
     </div>
@@ -18,19 +30,19 @@
                         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner" style="border-radius:8px">
                                 <div class="carousel-item active" data-bs-interval="4000">
-                                    <img src="../../assets/img/Vaccine childern images/Immunization_schedule_720x480.jpg"
+                                    <img style="width: 500px;height: 470px;" src="../../../assets/img/kingAbdallah.jpg"
                                         class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item" data-bs-interval="4000" style="border-radius:8px">
-                                    <img src="../../assets/img/Vaccine childern images/pediatric_vaccine_600.jpg"
+                                    <img style="width: 500px;height: 470px;" src="../../../assets/img/Vaccine childern images/pediatric_vaccine_600.jpg"
                                         class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item" data-bs-interval="4000" style="border-radius:8px">
-                                    <img src="../../assets/img/Vaccine childern images/shutterstock_1756653812_h2.jpg"
+                                    <img style="width: 500px;height: 470px;" src="../../../assets/img/Vaccine childern images/shutterstock_1756653812_h2.jpg"
                                         class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item" style="border-radius:8px">
-                                    <img src="../../assets/img/Vaccine childern images/4928.jpg" class="d-block w-100"
+                                    <img style="width: 500px;height: 470px;" src="../../../assets/img/Vaccine childern images/4928.jpg" class="d-block w-100"
                                         alt="...">
                                 </div>
                             </div>
@@ -53,7 +65,7 @@
                             </div>
                             <div class="card-body">
                                 <form (submit)="submit()">
-                                    <h4 class="font-weight-bolder mt-3">Regester</h4>
+                                    <h4 class="font-weight-bolder mt-3">Register</h4>
                                     <p class="mb-1">Fill all fields to register</p>
                                     <p class="mb-1">
                                         <mat-form-field appearance="outline" style="width:350px ;">
@@ -80,7 +92,7 @@
                                         <mat-form-field appearance="outline" style="width:350px ;">
                                             <mat-label>Family Book Number</mat-label>
                                             <input matInput placeholder="Family Book Number"
-                                                [(ngModel)]="service.parent.familybooknumber" name="familybooknumber">
+                                                [(ngModel)]="service.parent.familyBookNumber" name="familybooknumber">
                                         </mat-form-field>
                                     </p>
                                     <p class="mb-2">
@@ -89,6 +101,32 @@
                                             <input type="password" matInput placeholder="Password"
                                                 [(ngModel)]="service.parent.password" name="password">
                                         </mat-form-field>
+                                    </p>
+                                    <p class="mb-1">
+                                        <mat-form-field appearance="fill" style="width:350px ;">
+                                            <mat-label>Select an City</mat-label>
+                                            <mat-select [(value)]="service.parent.goverment">
+                                              <mat-option value="Ajloun">Ajloun</mat-option>
+                                              <mat-option value="Amman">Amman</mat-option>
+                                              <mat-option value="Aqaba">Aqaba</mat-option>
+                                  
+                                              <mat-option value="Balqa">Balqa</mat-option>
+                                  
+                                              <mat-option value="Madaba">Madaba</mat-option>
+                                              <mat-option value="Ma'an">Ma'an</mat-option>
+                                              <mat-option value="Mafraq">Mafraq</mat-option>
+                                  
+                                  
+                                              <mat-option value="Zarqa">Zarqa</mat-option>
+                                              <mat-option value="Jerash">Jerash</mat-option>
+                                  
+                                              <mat-option value="Irbid">Irbid</mat-option>
+                                              <mat-option value="Karak">Karak</mat-option>
+                                  
+                                              <mat-option value="Tafilah">Tafilah</mat-option>
+                                            </mat-select>
+                                          </mat-form-field>
+                                          
                                     </p>
 
                                     <button type="submit" class="btn btn-primary">Save parent</button>

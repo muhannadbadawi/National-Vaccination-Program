@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col"></div>
+    <div class="col-10">
+        <div class="bg-gradient-primary shadow-primary border-radius-lg pt-2 pb-1">
+            <h2 class="text-white text-capitalize ps-3 ">Add Vaccine</h2>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>
+<div class="row mt-5">
+    <div class="col"></div>
+    <div class="col">
+        <form (submit)="submit()">
+            <p class="mb-1">
+                <mat-form-field appearance="outline" style="width:350px ;">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" [(ngModel)]="service.vaccine.name"
+                        name="name">
+                </mat-form-field>
+            </p>
+            <p class="mb-1">
+                <mat-form-field appearance="outline" style="width:350px ;">
+                    <mat-label>Number Of Doses</mat-label>
+                    <input matInput placeholder="Number Of Doses" [(ngModel)]="service.vaccine.numberOfDoses"
+                        name="numberOfDoses">
+                </mat-form-field>
+            </p>
+            <p class="mb-2">
+                <mat-form-field appearance="outline" style="width:350px ;">
+                    <mat-label>Preferred Age</mat-label>
+                    <input matInput placeholder="Preferred Age" [(ngModel)]="service.vaccine.preferredAge"
+                        name="preferredAge">
+                </mat-form-field>
+            </p>
+         
+            <button type="submit" class="btn btn-primary ms-7" style="width: 180px;">Save</button>
+         
+        
+        </form>
+    </div>
+    <div class="col"></div>
+
+</div>

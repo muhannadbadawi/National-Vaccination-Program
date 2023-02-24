@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col"></div>
+    <div class="col-10">
+        <div class="bg-gradient-primary shadow-primary border-radius-lg pt-2 pb-1">
+            <h2 class="text-white text-capitalize ps-3 ">Add Center</h2>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>
+<div class="row mt-5">
+    <div class="col"></div>
+
+    <div class="col">
+
+        <form (submit)="submit()">
+            <p class="mb-1">
+                <mat-form-field appearance="outline" style="width:350px ;">
+                    <mat-label>Center ID</mat-label>
+                    <input matInput placeholder="Center ID" [(ngModel)]="service.center.id" name="id">
+                </mat-form-field>
+            </p>
+
+            <p class="mb-1">
+                <mat-form-field appearance="outline" style="width:350px ;">
+                    <mat-label>Center Name</mat-label>
+                    <input matInput placeholder="Center Name" [(ngModel)]="service.center.healthCenterName" name="name">
+                </mat-form-field>
+            </p>
+            <p class="mb-2">
+                <mat-form-field appearance="outline" style="width:350px ;">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput placeholder="Password" [(ngModel)]="service.center.password"
+                        name="password">
+                </mat-form-field>
+            </p>
+            <p class="mb-1">
+                <mat-form-field appearance="fill" style="width:350px ;">
+                    <mat-label>Select an City</mat-label>
+                    <mat-select [(value)]="service.center.goverment">
+                        <mat-option value="Ajloun">Ajloun</mat-option>
+                        <mat-option value="Amman">Amman</mat-option>
+                        <mat-option value="Aqaba">Aqaba</mat-option>
+
+                        <mat-option value="Balqa">Balqa</mat-option>
+
+                        <mat-option value="Madaba">Madaba</mat-option>
+                        <mat-option value="Ma'an">Ma'an</mat-option>
+                        <mat-option value="Mafraq">Mafraq</mat-option>
+
+
+                        <mat-option value="Zarqa">Zarqa</mat-option>
+                        <mat-option value="Jerash">Jerash</mat-option>
+
+                        <mat-option value="Irbid">Irbid</mat-option>
+                        <mat-option value="Karak">Karak</mat-option>
+
+                        <mat-option value="Tafilah">Tafilah</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </p>
+            <button type="submit" class="btn btn-primary ms-7" style="width: 180px;">Save</button>
+
+
+        </form>
+    </div>
+    <div class="col"></div>
+
+</div>

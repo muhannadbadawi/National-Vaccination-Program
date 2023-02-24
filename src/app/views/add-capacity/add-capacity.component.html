@@ -1,0 +1,28 @@
+<div class="row mt-5">
+    <div class="col"></div>
+    <div class="col" >
+        <h2>{{vaccine}}</h2>
+        <p class="mb-5">
+            <mat-label class="me-3">Start</mat-label>
+            <input type="time" [(ngModel)]="service.centerCapacity.startTime" class="me-3">
+            <mat-label class="me-3">End</mat-label>
+            <input type="time" [(ngModel)]="service.centerCapacity.endTime" class="me-3">
+          
+        </p>
+        <form (submit)="submit()">
+
+            <p class="mb-1">
+                <mat-form-field appearance="outline" style="width:350px ;">
+                    <mat-label>Children's carrying capacity</mat-label>
+                    <input matInput placeholder="Children's carrying capacity" [(ngModel)]="service.centerCapacity.numberOfChild" name="name">
+                </mat-form-field>
+            </p>
+            <button type="submit"  class="btn btn-primary ms-7" style="width: 180px;">Save</button>
+
+        </form>
+    </div>
+    <div class="col">
+    
+    </div>
+
+</div>

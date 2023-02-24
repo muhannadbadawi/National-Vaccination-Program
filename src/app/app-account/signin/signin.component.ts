@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { NavigationStart, Router } from '@angular/router';
-import { ParentService } from 'src/app/parent.service';
+import { SharedService } from 'src/app/app-services/shared.service';
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -10,38 +9,42 @@ import { ParentService } from 'src/app/parent.service';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(public service:ParentService,private router: Router) { }
+  constructor(public service: SharedService) {
 
+    if (localStorage.getItem('RemeberMe') == "true") {
+      location.href='/dashboard'
+    }
+  }
+  remeberMe: boolean = false;
   ngOnInit(): void {
-    const displayLoadingIndicator=false;  
-    this.service.login={
-      id:null,
-      password:null
+    const displayLoadingIndicator = false;
+    this.service.login = {
+      id: null,
+      password: null
     }
   }
   RefresherFormBook() {
     this.service.login.id = null
     this.service.login.password = null
   }
-  login(){
-    this.service.login.id = Number.parseInt(this.service.login.id.toString())
-    this.service.loginParent().subscribe(res => {
-      Swal.fire(
-        'Login is success',
-        'Done',
-        'success'
-        )       
-        this.router.navigateByUrl('/dashboard');
+  login() {
+    this.service.loginUser().subscribe(res => {
+      debugger
+      if (res!=0) {
+        localStorage.setItem("type",res)
+        localStorage.setItem('ID', this.service.login.id);
+        localStorage.setItem("RemeberMe", this.remeberMe.toString());
+        location.href='/dashboard'
         this.RefresherFormBook();
-    },
-      err => {
+      }
+      else{
         Swal.fire(
           'ERROR !',
-          'Not Found',
+          'please Enter the currect ID and Password!',
           'error'
-          )
-        console.log(err)
-      })
+        )
+      }
+      
+    })
   }
-
 }

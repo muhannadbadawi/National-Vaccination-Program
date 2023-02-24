@@ -1,0 +1,57 @@
+
+<div class="row mt-5">
+    <div class="col"></div>
+    <div class="col">
+        <p class="mb-5">
+            <mat-label>Center ID : {{id}}</mat-label>
+        </p>
+        <p class="mt-3">
+        <mat-form-field appearance="fill" style="width:350px ;">
+            <mat-label>Select Day</mat-label>
+            <mat-select [(value)]="service.adminCapacity.day" name="name">
+                <mat-option value="0">Sunday</mat-option>
+                <mat-option value="1">Monday</mat-option>
+                <mat-option value="2">Tuesday</mat-option>
+                <mat-option value="3">Wednesday</mat-option>
+                <mat-option value="4">Thursday</mat-option>
+            </mat-select>
+        </mat-form-field>
+        </p>
+        <!-- <mat-label class="me-3">Start</mat-label>
+        <input type="date" [(ngModel)]="service.adminCapacity.startDate" class="me-3">
+        <mat-label class="me-3">End</mat-label>
+        <input type="date" [(ngModel)]="service.adminCapacity.endDate" class="me-3"> -->
+        <form (submit)="submit()">
+
+            <p class="mt-3">
+                <mat-form-field appearance="fill" style="width:350px ;">
+                    <mat-label>Select Vaccine Date</mat-label>
+                    <mat-select [(value)]="service.adminCapacity.vaccineId" name="name">
+                        <mat-option value="45D" >45 D</mat-option>
+                        <mat-option value="61D" >61 D</mat-option>
+                        <mat-option value="91D" >91 D</mat-option>
+                        <mat-option value="121D">121 D</mat-option>
+                        <mat-option value="271D">271 D</mat-option>
+                        <mat-option value="12M" >12 M</mat-option>
+                        <mat-option value="18M" >18 M</mat-option> 
+                    </mat-select>
+                </mat-form-field>
+            </p>
+
+
+            <!-- <p class="mt-5">
+                <mat-form-field appearance="outline" style="width:350px ;">
+                    <mat-label>Vaccine Id</mat-label>
+                    <input matInput placeholder="Vaccine Id" [(ngModel)]="service.adminCapacity.vaccineId" name="name">
+                </mat-form-field>
+            </p> -->
+
+            <button type="submit" class="btn btn-primary ms-7" style="width: 180px;">Save</button>
+            <button (click)="cancel()" routerLink="../centerList" class="btn btn-primary ms-7"
+                style="width: 180px;">Cancel</button>
+        </form>
+    </div>
+
+    <div class="col"></div>
+
+</div>

@@ -1,119 +1,47 @@
-<img src="../../assets/img/3d-map-illustration-of-jordan-vector-removebg-preview.png" usemap="#image-map">
+<div class="row">
+  <div class="col">
+    <img src="../../assets/img/3d-map-illustration-of-jordan-vector-removebg-preview.png" usemap="#image-map">
 
-      <map name="image-map">
-        
-        <area role="button" target="" alt="irbid" title="irbid" (mouseover)="myfun()" 
-          coords="177,122,179,109,195,104,200,108,209,109,210,103,216,103,216,95,200,78,190,75,175,81,173,90,172,101,171,121"
-          shape="poly">
-        <area role="button" target="" alt="ajloan" title="ajloan" (mouseover)="myfun()"
-          coords="179,108,178,122,187,124,199,109,194,103" shape="poly">
-        <area role="button" target="" alt="Jerash" title="Jerash" (mouseover)="myfun()"
-          coords="208,121,204,116,210,109,201,108,183,124,199,129" shape="poly">
-        <area role="button" target="" alt="balqa" title="balqa" (mouseover)="myfun()"
-          coords="171,121,178,120,201,129,203,134,182,145,185,155,167,164,171,158" shape="poly">
-        <area role="button" target="" alt="zarqa " title="zarqa "(mouseover)="myfun()"
-          coords="360,164,296,178,272,158,262,160,251,153,255,145,247,137,215,141,200,129,207,121,213,126,249,127"
-          shape="poly">
-        <area role="button" target="" alt="amman" title="amman" (mouseover)="myfun()"
-          coords="204,133,180,146,182,155,194,155,192,164,198,176,194,186,196,198,313,199,297,179,271,159,263,161,248,151,254,145,246,137,215,140"
-          shape="poly">
-        <area role="button" target="" alt="Madaba" title="Madaba" (mouseover)="myfun()"
-          coords="196,156,184,156,168,163,162,184,193,187,200,179,193,166" shape="poly">
-        <area role="button" target="" alt="karak" title="karak" (mouseover)="myfun()"
-          coords="193,185,166,185,158,197,161,213,154,228,161,231,166,221,182,224,211,241,226,214,222,200,197,200"
-          shape="poly">
-        <area role="button" target="" alt="maan" title="maan" (mouseover)="myfun()"
-          coords="223,201,226,213,213,241,200,253,163,253,149,303,170,313,185,368,214,372,249,349,271,318,335,305,351,277,379,263,312,199"
-          shape="poly">
-        <area role="button" target="" alt="Tafilah" title="Tafilah" (mouseover)="myfun()"
-          coords="165,221,181,223,210,240,202,250,163,254,146,245,153,228,160,230" shape="poly">
-        <area role="button" target="" alt="aqaba" title="aqaba" (mouseover)="myfun()"
-          coords="145,245,161,254,149,301,171,314,186,369,119,359,118,341,129,316,136,294,134,269" shape="poly">
-        <area role="button" target="" alt="Mafraq" title="Mafraq" (mouseover)="myfun()"
-          coords="448,23,471,96,464,97,470,109,487,109,493,115,465,137,358,161,248,127,212,124,205,116,209,109,215,102,216,96,220,92,225,93,240,104,278,111"
-          shape="poly">
-      </map>
-      <div id="cc">
+    <map name="image-map">
 
-      </div>
-      <script>
-        var city = {
-          zarqa: ["مركز صحي الازرق الشامل", "مركز صحي بيرين الشامل", "مركز صحي المشيرفة الشامل", "مركز صحي وادي الحجر الشامل", "مركز صحي اسكان الهاشمية الشامل", "مركز صحي الضليل الشامل", "مركز صحي الرشيد الشامل", "مركز حي العامرية الشامل", "مركز صحي حمزه الشامل"],
-          amman: ["مركز صحي عمان الشامل", "مركز صحي الاميرة بسمة الشامل", "مركز صحي وادي السير الشامل", "مركز صحي ابو نصير الشامل", "مركز صحي ناعور الشامل", "مركز صحي الموقر الشامل", "مركز صحي ماركا الشامل", "مركز صحي النصر الشامل", "مركز صحي خريبة السوق الشامل", "مركز صحي الجيزة الشامل", "مركز صحي طبربور الشامل", "مركز صحي الجبيهة الشامل", "مركز صحي الهاشمي الشامل", "مركز صحي القويسمة الشامل", "مركز صحي صويلح الشامل"],
-          irbid: ["مركز صحي الرمثا الشامل", "مركز صحي الحصن الشامل", "مركز صحي الصريح الشامل", "مركز صحي حكمة الشامل", "مركز صحي الفاروق الشامل", "مركز صحي قميم الشامل", "مركز صحي دير ابي سعيد الشامل", "مركز صحي كفر عوان الشامل", "مركز صحي الطيبة الشامل", "مركز صحي النعيمة الشامل", "مركز صحي المغير الشامل"],
-          ajloan: ["مركز صحي الامير حسن الشامل", "مركز صحي عنجرة الشامل", "مركز صحي صخره الشامل"],
-          Jerash: ["مركز صحي جرش الشامل", "مركز صحي برما الشامل", "مركز صحي المصطبة الشامل", "مركز صحي الرازي الشامل"],
-          balqa: ["مركز صحي البقيع الشامل", "مركز صحي عين الباشا الشامل", "مركز صحي الفحيص الشامل", "مركز صحي زي الشامل", "مركز صحي الصبيحي الشامل", "مركز صحي عيرا الشامل", "مركز صحي يرقا الشامل"],
-          Mafraq: ["مركز صحي رحاب الشامل", "مركز صحي نادرة الشامل", "مركز صحي بلعما الشامل", "مركز صحي منشية بني حسن الشامل", "مركز صحي حدود الكرامة الشامل", "مركز صحي الرويشد الشامل", "مركز حي الزعتري الشامل", "مركز صحي الخالدية الشامل", "مركز صحي سما السرحان الشامل", "مركز صحي الحمراء الشامل", "مركز صحي مغير السرحان الشامل", "مركز صحي الباعج الشامل", "مركز صحي المنصورة الشامل", "مركز صحي الصفاوي الشامل", "مركز صحي دير الكهف الشامل", "مركز صحي ام القطين الشامل", "مركز صحي صبحا الشامل", "مركز صحي ام الجمال الشامل", "مركز صحي الاشرفية الشامل", "مركز صحي الرفاعيات الشامل", "مركز صحي البشرية الشامل"],
-          Madaba: ["مركز صحي الشرقي الشامل", "مركز صحي لب الشامل"],
-          maan: ["مركز صحي الشوبك الشامل", "مركز صحي الحسينية الشامل", "مركز صحي الجفر الشامل", "مركز حي المريغة الشامل", "مركز صحي البتراء الشامل"],
-          aqaba: ["مركز صحي القويرة الشامل", "مركز صحي الديسة الشامل", "مركز صحي رم الشامل", "مركز صحي رحمة الشامل", "مركز صحي الريشة الشامل", "مركز صحي بئر مذكور الشامل", "مركز صحي القريقرة الشامل"],
-          Tafilah: ["مركز صحي بصيرة الشامل"],
-          karak: ["مركز صحي الكرك الشامل", "مركز صحي القطرانة الشامل", "مركز صحي المزار الشامل", "مركز صحي فقوع الشامل", "مركز صحي عي الشامل", "مركز حي غور المزرعة الشامل", "مركز صحي الربة الشامل"]
-        }
-        function arrToUl(data) {
-          let div = document.getElementById("cc");
-          div.innerHTML = "<ul id='myList' class='list-group'></ul>"
-          let list = document.getElementById("myList");
-          data.forEach((item) => {
-            let li = document.createElement("li");
-            li.innerText = item;
-            list.appendChild(li);
-          });
-        }
-        function myfun(x) {
-          var z = x.title;
-          switch (z) {
-            case "zarqa":
-              console.log(city.zarqa);
-              arrToUl(city.zarqa);
-              break;
-            case "amman":
-              console.log(city.amman);
-              arrToUl(city.amman);
-              break;
-            case "irbid":
-              console.log(city.irbid);
-              arrToUl(city.irbid);
-              break;
-            case "ajloan":
-              console.log(city.ajloan);
-              arrToUl(city.ajloan);
-              break;
-            case "Jerash":
-              console.log(city.Jerash);
-              arrToUl(city.Jerash);
-              break;
-            case "Mafraq":
-              console.log(city.Mafraq);
-              arrToUl(city.Mafraq);
-              break;
-            case "Tafilah":
-              console.log(city.Tafilah);
-              arrToUl(city.Tafilah);
-              break;
-            case "balqa":
-              console.log(city.balqa);
-              arrToUl(city.balqa);
-              break;
-            case "Madaba":
-              console.log(city.Madaba);
-              arrToUl(city.Madaba);
-    
-              break;
-            case "karak":
-              console.log(city.karak);
-              arrToUl(city.karak);
-    
-              break;
-            case "aqaba":
-              console.log(city.aqaba);
-              arrToUl(city.aqaba);
-              break;
-            case "maan":
-              console.log(city.maan);
-              arrToUl(city.maan);
-              break;
-          }
-        }
-      </script>
+      <area role="button" #irbid target="" alt="irbid" title="Irbid" (click)="myfun(irbid)"
+        coords="177,122,179,109,195,104,200,108,209,109,210,103,216,103,216,95,200,78,190,75,175,81,173,90,172,101,171,121"
+        shape="poly">
+      <area role="button" #ajloan target="" alt="ajloan" title="Ajloun" (click)="myfun(ajloan)"
+        coords="179,108,178,122,187,124,199,109,194,103" shape="poly">
+      <area role="button" #jerash target="" alt="jerash" title="Jerash" (click)="myfun(jerash)"
+        coords="208,121,204,116,210,109,201,108,183,124,199,129" shape="poly">
+      <area role="button" #balqa target="" alt="balqa" title="Balqa" (click)="myfun(balqa)"
+        coords="171,121,178,120,201,129,203,134,182,145,185,155,167,164,171,158" shape="poly">
+      <area role="button" #zarqa target="" alt="zarqa " title="Zarqa" (click)="myfun(zarqa)"
+        coords="360,164,296,178,272,158,262,160,251,153,255,145,247,137,215,141,200,129,207,121,213,126,249,127"
+        shape="poly">
+      <area role="button" #amman target="" alt="amman" title="Amman" (click)="myfun(amman)"
+        coords="204,133,180,146,182,155,194,155,192,164,198,176,194,186,196,198,313,199,297,179,271,159,263,161,248,151,254,145,246,137,215,140"
+        shape="poly">
+      <area role="button" #madaba target="" alt="madaba" title="Madaba" (click)="myfun(madaba)"
+        coords="196,156,184,156,168,163,162,184,193,187,200,179,193,166" shape="poly">
+      <area role="button" #karak target="" alt="karak" title="Karak" (click)="myfun(karak)"
+        coords="193,185,166,185,158,197,161,213,154,228,161,231,166,221,182,224,211,241,226,214,222,200,197,200"
+        shape="poly">
+      <area role="button" #maan target="" alt="maan" title="Maan" (click)="myfun(maan)"
+        coords="223,201,226,213,213,241,200,253,163,253,149,303,170,313,185,368,214,372,249,349,271,318,335,305,351,277,379,263,312,199"
+        shape="poly">
+      <area role="button" #tafilah target="" alt="tafilah" title="Tafilah" (click)="myfun(tafilah)"
+        coords="165,221,181,223,210,240,202,250,163,254,146,245,153,228,160,230" shape="poly">
+      <area role="button" #aqaba target="" alt="aqaba" title="Aqaba" (click)="myfun(aqaba)"
+        coords="145,245,161,254,149,301,171,314,186,369,119,359,118,341,129,316,136,294,134,269" shape="poly">
+      <area role="button" #mafraq target="" alt="mafraq" title="Mafraq" (click)="myfun(mafraq)"
+        coords="448,23,471,96,464,97,470,109,487,109,493,115,465,137,358,161,248,127,212,124,205,116,209,109,215,102,216,96,220,92,225,93,240,104,278,111"
+        shape="poly">
+    </map>
+  </div>
+  <div class="col mt-3">
+    <ul class="list-group">
+      <li class="list-group-item text-end">{{city}}</li>
+      <ul class="list-group text-end"(click)="fillData(item)" *ngFor=" let item of service.centers">
+        <li class="list-group-item text-end"> {{item.healthCenterName}}</li>
+      </ul>
+    </ul>
+  </div>
+</div>

@@ -45,14 +45,20 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": [
+              "html2pdf.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/html2pdf.js/dist/html2pdf.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -115,15 +121,28 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+            	{
+            		"glob": "**/*",
+            		"input": "./node_modules/pspdfkit/dist/pspdfkit-lib/",
+            		"output": "./assets/pspdfkit-lib/"
+            	}
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
+           
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "60c0661a-e10a-4293-a782-b3b1a787c902"
   }
 }
